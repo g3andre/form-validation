@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+			crossorigin="anonymous"
+		/>
+		<title>Document</title>
+	</head>
+	<body style="box-sizing: border-box">
+		<div class="bg-primary vw-100 vh-100 d-inline-block">
+			<div class="container bg-light w-75 mt-5 p-5 rounded">
+				<form method="POST" action="/">
+					<h2>Formulário de Cadastro</h2>
+					<div class="mb-3 mt-5">
+						<label for="inputNome" class="form-label">Nome</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputNome"
+							aria-describedby="emailHelp"
+						/>
+						<div class="form-text text-danger">
+							<ul></ul>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="inputSobrenome" class="form-label">Sobrenome</label>
+						<input type="text" class="form-control" id="inputSobrenome" />
+						<div class="form-text text-danger">
+							<ul></ul>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="inputCpf" class="form-label">CPF</label>
+						<input type="text" class="form-control" id="inputCpf" />
+						<div class="form-text text-danger">
+							<ul></ul>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="inputUsername" class="form-label">Usuário</label>
+						<input type="text" class="form-control" id="inputUsername" />
+						<div class="form-text text-danger">
+							<ul></ul>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="inputSenha" class="form-label">Password</label>
+						<input type="password" class="form-control" id="inputSenha" />
+						<div class="form-text text-danger">
+							<ul></ul>
+						</div>
+					</div>
+                    <div class="mb-3">
+						<label for="inputConfirm" class="form-label">Repeat Password</label>
+						<input type="password" class="form-control" id="inputConfirm" />
+						<div class="form-text text-danger">
+							<ul></ul>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+
+        <script src="./form.js"></script>
+	</body>
+</html>
