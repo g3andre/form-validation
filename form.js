@@ -15,6 +15,7 @@ class ValidaForm {
 		this.clearErrorMessage();
 		if (!this.form) return false;
 
+		//Validação campos preenchidos
 		let formEl = Array.from(this.form.elements);
 		formEl.forEach((formItem) => {
 			if (formItem.type !== "submit" && formItem.value == "") {
@@ -23,10 +24,29 @@ class ValidaForm {
 					`${formItem.id.replace("input", "")} não pode estar vazio...`
 				);
 			}
+
+			//Valida o CPF
+			if( formItem.previousElementSibling.innerText.toUpperCase().includes('CPF')){
+				let validaCpf = new ValidaCpf(formItem.value);
+				if( !validaCpf.valida() ) this.showError(formItem, 'CPF inválido...')
+			}
 		});
+
+		//Validação dos campos de senha 
+		let passwords = document.querySelectorAll('[type="password"]');
+		let message = this.isInvalidPassword(passwords[0], passwords[1]);
+
+		if (message) this.showError(passwords[0], message);
 	}
 
-	validaSenha() {}
+	isInvalidPassword(input1, input2) {
+		if (input1.value.trim() != input2.value.trim())
+			return "Senhas devem ser iguais...";
+		if (input1.value.length < 6 || input1.value.length > 8)
+			return "A senha deve ter entre 6 e 8 caracteres...";
+
+		return false;
+	}
 
 	showError(formEl, message) {
 		let el = document.createElement("li");
